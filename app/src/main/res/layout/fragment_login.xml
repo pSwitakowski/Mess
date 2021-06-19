@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="90dp"
+
     tools:context=".login.LoginFragment">
 
 
@@ -26,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="15dp"
+            android:fontFamily="@font/roboto_mono_thin"
             android:gravity="center"
             android:text="@string/log_in"
             android:textSize="40sp" />
@@ -42,6 +44,7 @@
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginTop="30dp"
                 android:ems="10"
+                android:fontFamily="@font/roboto_mono_thin"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/font_color" />
@@ -60,6 +63,7 @@
                 android:layout_marginHorizontal="15dp"
                 android:layout_marginVertical="10dp"
                 android:ems="10"
+                android:fontFamily="@font/roboto_slab_thin"
                 android:hint="@string/password"
                 android:inputType="textPassword"
                 android:textColor="@color/font_color" />
@@ -70,6 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="15dp"
+            android:fontFamily="@font/russo_one"
             android:text="@string/log_in"
             android:textAlignment="center" />
 
@@ -80,6 +85,7 @@
             android:layout_marginHorizontal="15dp"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="25dp"
+            android:fontFamily="@font/roboto_mono_thin"
             android:gravity="start"
             android:text="@string/forgot_password" />
 
@@ -89,6 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="15dp"
             android:layout_marginTop="100dp"
+            android:fontFamily="@font/russo_one"
             android:text="@string/create_account"
             android:textAlignment="center" />
     </LinearLayout>
