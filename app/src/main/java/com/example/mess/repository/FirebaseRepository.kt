@@ -28,4 +28,23 @@ class FirebaseRepository {
             }
         return cloudResult
     }
+
+    fun createUser(username:CharSequence, email: CharSequence, uid: CharSequence){
+
+        val user = hashMapOf(
+            "name" to username,
+            "email" to email,
+            "uid" to uid
+        )
+
+        cloud.collection("users").document(uid.toString())
+            .set(user)
+            .addOnSuccessListener {
+                Log.d(REPO_DEBUG, "User successfully created")
+            }
+            .addOnFailureListener { e ->
+                Log.w(REPO_DEBUG, "Error creating user", e)
+            }
+
+    }
 }
