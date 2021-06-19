@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Mess</string>
+    <string name="mainActivityTextView">MainActivity</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="log_in">Log in</string>
+    <string name="activity_registration_img_desc">Login header image</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="create_account">Create Account</string>
+    <string name="register">Register</string>
+    <string name="email">E-mail</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="home_fragment_tv">Home Fragment</string>
+    <string name="profile_fragment_tv">Profile Fragment</string>
+    <string name="bottomnavbar_home_title">Home</string>
+    <string name="bottomnavbar_profile_title">Profile</string>
+</resources>
