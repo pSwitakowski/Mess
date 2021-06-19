@@ -40,7 +40,7 @@
                 android:id="@+id/profile_email_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_mono_thin"
+                android:fontFamily="@font/russo_one"
                 android:includeFontPadding="false"
                 android:text="mail"
                 android:textSize="14sp" />
@@ -63,12 +63,16 @@
             android:orientation="vertical"
             android:padding="30dp">
 
-            <ImageView
-                android:id="@+id/profile_details_iv"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+            <TextView
+                android:id="@+id/profile_details_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_baseline_account_circle_24" />
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/russo_one"
+                android:includeFontPadding="false"
+                android:text="USER INFO"
+                android:textSize="20sp" />
 
 
             <LinearLayout
@@ -91,7 +95,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginVertical="10dp"
                     android:layout_marginStart="5dp"
-                    android:fontFamily="@font/roboto_thin"
+                    android:fontFamily="@font/russo_one"
                     android:includeFontPadding="false"
                     android:text="Name"
                     android:textSize="20sp" />
@@ -117,10 +121,10 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginVertical="10dp"
                     android:layout_marginStart="5dp"
-                    android:fontFamily="@font/roboto_thin"
+                    android:fontFamily="@font/russo_one"
                     android:includeFontPadding="false"
                     android:text="Email"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
@@ -130,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="60dp"
                 android:fontFamily="@font/russo_one"
                 android:text="@string/change_profile_data"
                 android:textAlignment="center" />
