@@ -15,4 +15,5 @@
     <string name="profile_fragment_tv">Profile Fragment</string>
     <string name="bottomnavbar_home_title">Home</string>
     <string name="bottomnavbar_profile_title">Profile</string>
+    <string name="name">Name</string>
 </resources>

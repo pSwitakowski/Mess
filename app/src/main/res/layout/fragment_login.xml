@@ -5,59 +5,71 @@
     android:id="@+id/login_cl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="90dp"
     tools:context=".login.LoginFragment">
 
 
     <LinearLayout
         android:id="@+id/login_ll"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center">
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <TextView
             android:id="@+id/login_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="15dp"
+            android:gravity="center"
             android:text="@string/log_in"
             android:textSize="40sp" />
 
-
-        <EditText
-            android:id="@+id/login_email_et"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_email_text_input_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="30dp"
-            android:ems="10"
-            android:gravity="center_horizontal"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress" />
+            android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/login_pwd_et"
+            <EditText
+                android:id="@+id/login_email_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="30dp"
+                android:ems="10"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/font_color" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/login_password_text_input_layout"
+            app:passwordToggleEnabled="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="10dp"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:gravity="center_horizontal"
-            android:hint="@string/password"
-            android:inputType="textPassword" />
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/login_pwd_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="10dp"
+                android:ems="10"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColor="@color/font_color" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/login_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="110dp"
+            android:layout_marginHorizontal="15dp"
             android:text="@string/log_in"
             android:textAlignment="center" />
 
@@ -65,16 +77,20 @@
             android:id="@+id/login_forgotpwd_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="50dp"
             android:layout_marginBottom="25dp"
-            android:text="@string/forgot_password"
-            android:textAlignment="center" />
+            android:gravity="start"
+            android:text="@string/forgot_password" />
 
         <Button
             android:id="@+id/login_createaccount_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/create_account" />
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/create_account"
+            android:textAlignment="center" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
