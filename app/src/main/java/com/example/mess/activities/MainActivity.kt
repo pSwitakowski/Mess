@@ -1,28 +1,31 @@
 package com.example.mess.activities
 
-import android.content.Intent
+
 import android.os.Bundle
+import android.text.Layout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.mess.R
-import com.example.mess.repository.FirebaseRepository
+import com.example.mess.home.MessagesFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.firebase.auth.FirebaseAuth
+
 
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
 
         // Navbar setup
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         val navController = findNavController(R.id.fragment_navhost_mainactivity)
-        var appBarConfiguration = AppBarConfiguration(setOf(R.id.profileFragment,R.id.homeFragment))
+        var appBarConfiguration = AppBarConfiguration(setOf(R.id.profileFragment,R.id.usersFragment, R.id.messagesFragment))
         setupActionBarWithNavController(navController, appBarConfiguration)
         bottomNavigationView.setupWithNavController(navController)
 
@@ -31,7 +34,16 @@ class MainActivity : AppCompatActivity() {
     // Overrride back press on main activity so it doesnt log out the user
     override fun onBackPressed() {
         super.onBackPressed()
+
+//        val currentFragment: Fragment = supportFragmentManager.findFragmentById(R.id.messages_fragment_tv)!!
+//        if (currentFragment !is MessagesFragment) {
+//            findNavController()
+//                .navigate(Layout.Directions.actionLoginFragmentToRegistrationFragment().actionId)
+//        }
+        }
     }
+
+
 
 //
 //
@@ -84,4 +96,3 @@ class MainActivity : AppCompatActivity() {
 //    private fun showLoggedAccountInfo(account: GoogleSignInAccount?) {
 //        Toast.makeText(this, ""+ account?.account.toString(), Toast.LENGTH_LONG).show()
 //    }
-}

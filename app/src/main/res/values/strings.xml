@@ -18,4 +18,6 @@
     <string name="name">Name</string>
     <string name="change_password">Change password</string>
     <string name="change_profile_data">Change Profile Data</string>
+    <string name="bottomnavbar_messaages_title">Messages</string>
+    <string name="messages_fragment_tv">Messages Activity</string>
 </resources>

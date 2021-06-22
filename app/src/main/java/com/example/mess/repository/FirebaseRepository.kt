@@ -59,4 +59,20 @@ class FirebaseRepository {
                 Log.w(REPO_DEBUG, "Error setting user " + auth.currentUser?.uid + " online status")
             }
     }
+
+    fun getUsers() : LiveData<List<User>>{
+        val cloudResult = MutableLiveData<List<User>>()
+
+        cloud.collection("users")
+            .whereNotEqualTo("uid", auth.currentUser?.uid)
+            .get()
+            .addOnSuccessListener {
+                val user = it.toObjects(User::class.java)
+                cloudResult.postValue(user)
+            }
+            .addOnFailureListener {
+                Log.d(REPO_DEBUG, it.message.toString())
+            }
+        return cloudResult
+    }
 }
