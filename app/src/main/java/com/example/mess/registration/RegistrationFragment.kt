@@ -15,9 +15,7 @@ import kotlinx.android.synthetic.main.fragment_registration.*
 class RegistrationFragment : BaseFragment() {
     private val REG_DEBUG = "REG_DEBUG"
     private val fbAuth = FirebaseAuth.getInstance()
-
     private val firebaseRepository = FirebaseRepository()
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

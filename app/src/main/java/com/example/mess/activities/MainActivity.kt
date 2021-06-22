@@ -15,13 +15,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
-    private val fbAuth: FirebaseAuth = FirebaseAuth.getInstance()
-    private val firebaseRepository = FirebaseRepository()
-
-    override fun onStart() {
-        super.onStart()
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

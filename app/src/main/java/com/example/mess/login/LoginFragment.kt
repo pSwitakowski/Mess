@@ -20,10 +20,6 @@ class LoginFragment : BaseFragment() {
     private val fbAuth = FirebaseAuth.getInstance()
     private val LOG_DEBUG = "LOGIN_DEBUG"
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -53,19 +49,11 @@ class LoginFragment : BaseFragment() {
                 fbAuth.signInWithEmailAndPassword(email, password)
                     .addOnSuccessListener { authRes ->
                         if (authRes.user != null) {
-                            // set user status on db to online
-
-                            // Auth observer
-                            //firebaseRepository.setUserOnlineStatus(authRes.user!!.uid, true)
-
                             // start main activity
                             startApp()
-
                         }
-
                     }
                     .addOnFailureListener { exc ->
-
                         //hide keyboard when showing Snackbar
                         val imm: InputMethodManager =
                             activity!!.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager

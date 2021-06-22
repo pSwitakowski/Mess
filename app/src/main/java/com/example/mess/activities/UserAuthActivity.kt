@@ -32,16 +32,6 @@ class UserAuthActivity : AppCompatActivity() {
         fbAuth.removeAuthStateListener(this.authStateListener)
     }
 
-    private fun isCurrentUser(){
-
-        fbAuth.currentUser?.let {auth ->
-            val intent = Intent(applicationContext, MainActivity::class.java).apply {
-                flags = (Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            }
-            startActivity(intent)
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_userauth)
