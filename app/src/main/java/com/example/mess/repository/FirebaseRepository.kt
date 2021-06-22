@@ -47,4 +47,16 @@ class FirebaseRepository {
             }
 
     }
+
+    fun setUserOnlineStatus(uid: CharSequence, online: Boolean){
+
+        cloud.collection("users").document(uid.toString())
+            .update("online", online)
+            .addOnSuccessListener {
+                Log.d(REPO_DEBUG, "User " + auth.currentUser?.uid + " online status changed to: " + online.toString())
+            }
+            .addOnFailureListener { e ->
+                Log.w(REPO_DEBUG, "Error setting user " + auth.currentUser?.uid + " online status")
+            }
+    }
 }

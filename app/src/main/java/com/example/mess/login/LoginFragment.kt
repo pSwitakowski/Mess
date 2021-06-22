@@ -10,6 +10,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.navigation.fragment.findNavController
 import com.example.mess.BaseFragment
 import com.example.mess.R
+import com.example.mess.repository.FirebaseRepository
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_login.*
@@ -18,6 +19,10 @@ import kotlinx.android.synthetic.main.fragment_login.*
 class LoginFragment : BaseFragment() {
     private val fbAuth = FirebaseAuth.getInstance()
     private val LOG_DEBUG = "LOGIN_DEBUG"
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,7 +52,17 @@ class LoginFragment : BaseFragment() {
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 fbAuth.signInWithEmailAndPassword(email, password)
                     .addOnSuccessListener { authRes ->
-                        if (authRes.user != null) startApp()
+                        if (authRes.user != null) {
+                            // set user status on db to online
+
+                            // Auth observer
+                            //firebaseRepository.setUserOnlineStatus(authRes.user!!.uid, true)
+
+                            // start main activity
+                            startApp()
+
+                        }
+
                     }
                     .addOnFailureListener { exc ->
 

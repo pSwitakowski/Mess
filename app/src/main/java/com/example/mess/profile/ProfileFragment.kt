@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.mess.R
 import com.example.mess.data.User
+import com.example.mess.repository.FirebaseRepository
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_profile.*
 
@@ -15,6 +16,7 @@ class ProfileFragment : Fragment() {
     private val PROFILE_DEBUG = "PROFILE_DEBUG"
     private val fbAuth = FirebaseAuth.getInstance()
     private val profileViewmodel by viewModels<ProfileViewModel>()
+    private val firebaseRepository = FirebaseRepository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         setHasOptionsMenu(true)
@@ -36,6 +38,7 @@ class ProfileFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.home_logout_item -> {
+                firebaseRepository.setUserOnlineStatus(fbAuth.currentUser!!.uid, false)
                 fbAuth.signOut()
                 requireActivity().finish()
             }

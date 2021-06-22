@@ -1,5 +1,6 @@
 package com.example.mess.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -7,32 +8,19 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.mess.R
+import com.example.mess.repository.FirebaseRepository
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 
 class MainActivity : AppCompatActivity() {
-//    fun updateUI(account: GoogleSignInAccount?) {
-//        if (account != null) {
-//            Toast.makeText(this, "U Signed In successfully", Toast.LENGTH_LONG).show()
-//            //startActivity(Intent(this, AnotherActivity::class.java))
-//        } else {
-//            Toast.makeText(this, "U Didnt sign in", Toast.LENGTH_LONG).show()
-//        }
-//    }
-//    fun signIn(mGoogleSignInClient: GoogleSignInClient){
-//        val signInIntent: Intent = mGoogleSignInClient.getSignInIntent()
-//        startActivityForResult(signInIntent, RC_SIGN_IN)
-//    }
-//
-//    private fun signIn() {
-//        val signInIntent: Intent = mGoogleSignInClient.getSignInIntent()
-//        startActivityForResult(signInIntent, RC_SIGN_IN)
-//    }
-//    fun signIn(mGoogleSignInClient: GoogleSignInClient) {
-//        val signInIntent: Intent = mGoogleSignInClient.signInIntent
-//        startActivity(signInIntent)
-//        //startActivityForResult(signInIntent, 1)
-//    }
+
+    private val fbAuth: FirebaseAuth = FirebaseAuth.getInstance()
+    private val firebaseRepository = FirebaseRepository()
+
+    override fun onStart() {
+        super.onStart()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +32,13 @@ class MainActivity : AppCompatActivity() {
         var appBarConfiguration = AppBarConfiguration(setOf(R.id.profileFragment,R.id.homeFragment))
         setupActionBarWithNavController(navController, appBarConfiguration)
         bottomNavigationView.setupWithNavController(navController)
+
+    }
+
+    // Overrride back press on main activity so it doesnt log out the user
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
 
 //
 //
@@ -65,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 //            //Toast.makeText(this, "sign in button click", Toast.LENGTH_SHORT).show()
 //        }
 
-    }
+
 //    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 //        super.onActivityResult(requestCode, resultCode, data)
 //        //super.onActivityResult(requestCode, resultCode, data)
