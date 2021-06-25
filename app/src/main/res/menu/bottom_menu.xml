@@ -15,4 +15,8 @@
         android:icon="@drawable/ic_baseline_message_24"
         android:title="@string/bottomnavbar_messaages_title"
         />
+    <item
+        android:id="@+id/mapActivity"
+        android:icon="@drawable/ic_baseline_map_24"
+        android:title="Map" />
 </menu>
