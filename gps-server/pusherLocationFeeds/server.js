@@ -22,6 +22,8 @@ app.post('/location', (req, res,next)=>{
     var latitude = req.body.latitude;
     var username = req.body.username;
 
+    console.log(`${longitude} ${latitude} ${username}`)
+
     pusher.trigger('feed', 'location', {longitude, latitude, username});
     res.json({success: 200});
 });
