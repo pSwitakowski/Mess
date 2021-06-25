@@ -64,9 +64,9 @@ class MapActivity : AppCompatActivity() {
     }
 
     private fun addMarkers(googleMap: GoogleMap) {
+        googleMap.clear()
         mapMarkers.forEach { place ->
             val latLng = LatLng(place.latitude, place.longitude)
-            googleMap.clear()
             val marker = googleMap.addMarker((
                     MarkerOptions()
                         .position(latLng)
@@ -169,7 +169,7 @@ class MapActivity : AppCompatActivity() {
 
             runOnUiThread {
                 val model = MapModel(lat,lon,name)
-                mapMarkers.add(model)
+                updateMarkers(model)
 
                 mapMarkers.forEach { marker ->
                     println("${marker.latitude} ${marker.longitude} ${marker.username}")
@@ -180,5 +180,21 @@ class MapActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+
+    private fun updateMarkers(model: MapModel) {
+        val currName = model.username
+        println(mapMarkers.size)
+
+        for (i in 0 until mapMarkers.size) {
+            println(i)
+            if(mapMarkers[i].username == currName) {
+                println("DUPDUPA")
+                mapMarkers[i] = model
+                return
+            }
+        }
+
+        mapMarkers.add(model)
     }
 }
