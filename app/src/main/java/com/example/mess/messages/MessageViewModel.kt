@@ -1,12 +1,10 @@
-package com.example.mess.users
+package com.example.mess.messages
 
 import androidx.lifecycle.ViewModel
 import com.example.mess.repository.FirebaseRepository
 
-class UsersViewModel : ViewModel() {
+class MessagesViewModel : ViewModel() {
     private val repository = FirebaseRepository()
 
-    val users = repository.getUsers()
-
-
+    val messages = repository.getAllMessages()
 }
