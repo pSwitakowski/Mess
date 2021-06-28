@@ -9,15 +9,30 @@
         android:id="@+id/profileFragment"
         android:name="com.example.mess.profile.ProfileFragment"
         android:label="Profile"
-        tools:layout="@layout/fragment_profile"/>
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_usersFragment"
+            app:destination="@id/usersFragment" />
+    </fragment>
     <fragment
         android:id="@+id/usersFragment"
         android:name="com.example.mess.users.UsersFragment"
         android:label="Users"
-        tools:layout="@layout/fragment_users"/>
+        tools:layout="@layout/fragment_users">
+        <action
+            android:id="@+id/action_usersFragment_to_messagesFragment"
+            app:destination="@id/messagesFragment" />
+        <action
+            android:id="@+id/action_usersFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/messagesFragment"
-        android:name="com.example.mess.home.MessagesFragment"
+        android:name="com.example.mess.messages.MessagesFragment"
         android:label="Messages"
-        tools:layout="@layout/fragment_messages"/>
+        tools:layout="@layout/fragment_messages">
+        <action
+            android:id="@+id/action_messagesFragment_to_usersFragment"
+            app:destination="@id/usersFragment" />
+    </fragment>
 </navigation>
