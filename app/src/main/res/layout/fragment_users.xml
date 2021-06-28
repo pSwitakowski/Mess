@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/users_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:padding="5dp"
-        tools:listitem="@layout/user_item">
+    <androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/users_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="10dp"
+            android:nestedScrollingEnabled="false"
+            tools:listitem="@layout/user_item">
 
+        </androidx.recyclerview.widget.RecyclerView>
 
-    </androidx.recyclerview.widget.RecyclerView>
-</RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
