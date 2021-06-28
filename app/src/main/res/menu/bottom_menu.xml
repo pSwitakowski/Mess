@@ -14,4 +14,8 @@
         android:icon="@drawable/ic_baseline_account_circle_24"
         android:title="@string/users"
         />
+    <item
+        android:id="@+id/mapActivity"
+        android:icon="@drawable/ic_baseline_map_24"
+        android:title="Map" />
 </menu>
