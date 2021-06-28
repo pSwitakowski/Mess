@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
     id("androidx.navigation.safeargs.kotlin")
 }
 
@@ -79,6 +80,16 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.2.1")
     // For control over item selection of both touch and mouse driven selection
     implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.pusher:pusher-java-client:1.5.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.1'
+    implementation 'com.google.android.gms:play-services-location:18.0.0'
+
+    implementation 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
 
 }
 

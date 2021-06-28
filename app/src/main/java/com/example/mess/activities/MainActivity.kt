@@ -1,5 +1,7 @@
 package com.example.mess.activities
 
+
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -14,7 +16,7 @@ import com.example.mess.messages.MessagesFragment
 import com.example.mess.users.Onclickable
 import com.example.mess.users.UsersFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity(), Onclickable {
 
@@ -62,7 +64,6 @@ class MainActivity : AppCompatActivity(), Onclickable {
         view.clearAnimation()
         view.animate().translationY(0f).duration = 300
     }
-
     override fun onBackPressed() {
         super.onBackPressed()
 
@@ -82,5 +83,3 @@ class MainActivity : AppCompatActivity(), Onclickable {
     }
 
 }
-
-

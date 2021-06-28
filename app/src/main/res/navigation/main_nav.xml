@@ -30,7 +30,12 @@
         android:id="@+id/messagesFragment"
         android:name="com.example.mess.messages.MessagesFragment"
         android:label="Messages"
-        tools:layout="@layout/fragment_messages">
+        tools:layout="@layout/fragment_messages"/>
+    <activity
+        android:id="@+id/mapActivity"
+        android:name="com.example.mess.activities.MapActivity"
+        android:label="activity_map"
+        tools:layout="@layout/activity_map" />
         <action
             android:id="@+id/action_messagesFragment_to_usersFragment"
             app:destination="@id/usersFragment" />
