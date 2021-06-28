@@ -40,6 +40,7 @@ class MessagesFragment : Fragment(), Onclickable{
         super.onCreate(savedInstanceState)
 
         Log.d("RECIPIENT_UID", arguments?.getString("recipient_uid")!!)
+        Log.d("AUTHOR_UID", auth.currentUser!!.uid)
         this.recipientUid = arguments?.getString("recipient_uid")
         this.recipientName = arguments?.getString("recipient_name")
 

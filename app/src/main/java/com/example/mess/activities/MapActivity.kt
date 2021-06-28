@@ -157,6 +157,7 @@ class MapActivity : AppCompatActivity() {
         options.setCluster("eu")
         pusher = Pusher(getString(R.string.pusher_api_key), options)
 
+
         val channel = pusher.subscribe("feed")
 
         channel.bind("location") { _, _, data ->
