@@ -10,14 +10,13 @@ import android.view.inputmethod.InputMethodManager
 import androidx.navigation.fragment.findNavController
 import com.example.mess.BaseFragment
 import com.example.mess.R
-import com.example.mess.repository.FirebaseRepository
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_login.*
 
 
 class LoginFragment : BaseFragment() {
-    private val fbAuth = FirebaseAuth.getInstance()
+    private val auth = FirebaseAuth.getInstance()
     private val LOG_DEBUG = "LOGIN_DEBUG"
 
     override fun onCreateView(
@@ -46,7 +45,7 @@ class LoginFragment : BaseFragment() {
             val password = login_pwd_et.text?.trim().toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
-                fbAuth.signInWithEmailAndPassword(email, password)
+                auth.signInWithEmailAndPassword(email, password)
                     .addOnSuccessListener { authRes ->
                         if (authRes.user != null) {
                             // start main activity

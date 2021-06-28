@@ -20,4 +20,6 @@
     <string name="change_profile_data">Change Profile Data</string>
     <string name="bottomnavbar_messaages_title">Messages</string>
     <string name="messages_fragment_tv">Messages Activity</string>
+    <string name="users">Users</string>
+    <string name="map">Map</string>
 </resources>
