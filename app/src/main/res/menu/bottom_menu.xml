@@ -6,9 +6,9 @@
         android:icon="@drawable/ic_baseline_emoji_emotions_24"
         android:title="@string/bottomnavbar_profile_title" />
     <item
-        android:id="@+id/messagesFragment"
-        android:icon="@android:drawable/ic_dialog_map"
-        android:title="@string/map" />
+        android:id="@+id/mapActivity"
+        android:icon="@drawable/ic_baseline_map_24"
+        android:title="Map" />
     <item
         android:id="@+id/usersFragment"
         android:icon="@drawable/ic_baseline_account_circle_24"

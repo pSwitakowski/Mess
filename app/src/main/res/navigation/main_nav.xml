@@ -11,6 +11,9 @@
         android:label="Profile"
         tools:layout="@layout/fragment_profile">
         <action
+            android:id="@+id/action_profileFragment_to_mapActivity"
+            app:destination="@id/mapActivity" />
+        <action
             android:id="@+id/action_profileFragment_to_usersFragment"
             app:destination="@id/usersFragment" />
     </fragment>
@@ -20,11 +23,14 @@
         android:label="Users"
         tools:layout="@layout/fragment_users">
         <action
-            android:id="@+id/action_usersFragment_to_messagesFragment"
-            app:destination="@id/messagesFragment" />
-        <action
             android:id="@+id/action_usersFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_usersFragment_to_mapActivity2"
+            app:destination="@id/mapActivity" />
+        <action
+            android:id="@+id/action_usersFragment_to_messagesFragment"
+            app:destination="@id/messagesFragment" />
     </fragment>
     <fragment
         android:id="@+id/messagesFragment"
@@ -35,4 +41,9 @@
             android:id="@+id/action_messagesFragment_to_usersFragment"
             app:destination="@id/usersFragment" />
     </fragment>
+    <activity
+        android:id="@+id/mapActivity"
+        android:name="com.example.mess.activities.MapActivity"
+        android:label="activity_map"
+        tools:layout="@layout/activity_map" />
 </navigation>

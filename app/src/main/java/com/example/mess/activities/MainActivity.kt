@@ -32,8 +32,8 @@ class MainActivity : AppCompatActivity(), Onclickable {
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.profileFragment,
-                R.id.usersFragment,
-                R.id.messagesFragment
+                R.id.mapActivity,
+                R.id.usersFragment
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
